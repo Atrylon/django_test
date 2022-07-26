@@ -3,5 +3,4 @@ merchex/db.sqlite3
 merchex/.vscode/*
 key.txt
 
-listings/__pycache__/
-merchex/__pycache__/
+__pycache__/
