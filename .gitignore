@@ -2,3 +2,4 @@ env/
 merchex/db.sqlite3
 merchex/.vscode/*
 key.txt
+*/__pycache__/
