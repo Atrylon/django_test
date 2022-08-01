@@ -1,0 +1,20 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h2>{{listing.titre}}</h2>
+    <p>
+        <ul>
+            <li>Type d'article : {{listing.get_type_display}}</li>
+            <li>Description : {{listing.description}}</li>
+            <li>Vendu : {{listing.sold|yesno}}</li>
+            <li>Année : {{listing.year}}</li>
+            <li>Groupe :
+                <a href="{% url 'band-detail' listing.band.id %}">{{listing.band.name}}</a>
+            </li>
+        </ul>
+    </p>
+
+    <a href="{% url 'listing-list' %}">Retour à la liste des articles</a>
+
+{% endblock %}

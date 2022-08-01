@@ -18,9 +18,13 @@ from django.urls import path
 from listings import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('hello/', views.hello),
-    path('about-us/', views.about),
-    path('listings/', views.listings),
-    path('contact-us/', views.contact),
+    path('', views.index, name="home"),
+    path('about-us/', views.about, name="about"),
+    path('admin/', admin.site.urls, name="admin"),
+    path('bands/', views.band_list, name="band-list"),
+    path('bands/<int:id>/', views.band_detail, name='band-detail'),
+    path('contact/', views.contact, name='contact'),
+    path('email-sent/', views.email_sent, name='email-sent'),
+    path('listings/', views.listing_list, name="listing-list"),
+    path('listings/<int:id>/', views.listing_detail, name='listing-detail'),
 ]
