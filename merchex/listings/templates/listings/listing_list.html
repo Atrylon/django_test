@@ -3,11 +3,16 @@
 {% block content %}
 
     <h1>Liste des articles</h1>
+
+    <a href="{% url 'listing-create' %}">Ajouter un article</a>
+
     <p>
         <ul>
             {% for listing in listings %}
                 <li>
                     <a href="{% url 'listing-detail' listing.id %}">{{listing.title}}</a>
+                    <a href="{% url 'listing-change' listing.id %}">[Modifier]</a>
+                    <a href="{% url 'listing-delete' listing.id %}">[Supprimer]</a>
                 </li>
             {% endfor %}
         </ul>
