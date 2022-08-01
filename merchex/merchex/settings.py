@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -24,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 SECRET_KEY = 'django-insecure-qif7$+^wht7_h@j_bv7m14u@7y(*hlf-4ug984(aejk8jvi31e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
